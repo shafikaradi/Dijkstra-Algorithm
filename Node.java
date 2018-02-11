@@ -37,6 +37,11 @@ public class Node{
 
     }
 
+    public HashMap<Node,Integer> getNodes(){
+
+        return (HashMap) nodes;
+    }
+
 
     public void setNodeName(String nodeName){
 

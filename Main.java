@@ -3,7 +3,10 @@ public class Main{
     public static void main(String [] args){
 
       
-        System.out.print("Aa");
+        Graph disjkstrGraph = new Graph();
+
+        disjkstrGraph.buildGraph().findShortestPath();
+        disjkstrGraph.iterateOverMap();
 
     }
 }
