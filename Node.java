@@ -1,36 +1,42 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 public class Node{
 
-    private Node node;
+    private Map<Node,Integer> nodes = new HashMap<>();
     private String nodeName;
-    private Integer nodeValue;
+    private Integer nodeEdgeValue;
     
 
-    //The Constructor for an initial graph
-    public Node(String nodeName, Integer nodeValue){
+    public Node(String nodeName){
 
         this.nodeName = nodeName;
-        this.nodeValue = nodeValue;
 
     }
 
-    public Node(String nodeName, Integer nodeValue, Node node){
+    //The Constructor for an initial and end point of a graph
+    public Node(String nodeName,Integer nodeEdgeValue){
 
         this.nodeName = nodeName;
-        this.nodeValue = nodeValue;
-        this.node = node;
-    }
-
-    public void setNodeValue(Node node){
-
-        this.node = node;
+        this.nodeEdgeValue = nodeEdgeValue;
 
     }
 
-    public Node getNode(){
+    public Node(String nodeName, Integer nodeEdgeValue, Node node){
 
-        return this.node;
+        this.nodeName = nodeName;
+        this.nodeEdgeValue = nodeEdgeValue;
+        this.nodes.put(node,nodeEdgeValue);
+  
+    }
+
+    public void addNodeToGraph(Node node, Integer nodeEdgeValue){
+
+        nodes.put(node,nodeEdgeValue);
 
     }
+
 
     public void setNodeName(String nodeName){
 
@@ -44,15 +50,15 @@ public class Node{
 
     }
 
-    public void setNodeValue(Integer nodeValue){
+    public void setNodeEdgeValue(Integer nodeEdgeValue){
 
-        this.nodeValue = nodeValue;
+        this.nodeEdgeValue = nodeEdgeValue;
 
     }
 
-    public Integer getNodeValue(){
+    public Integer getNodeEdgeValue(){
 
-        return this.nodeValue;
+        return this.nodeEdgeValue;
 
     }
 
